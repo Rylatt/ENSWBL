@@ -9,6 +9,7 @@
     <style>
         .hero-bg {
             background-image: url('/img/deforest.jpg');
+            transition: background-image 0.5s ease-in-out;
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -31,10 +32,11 @@
         // Function to swap the background image
         function swapImage() {
             const heroSection = document.querySelector('.hero-bg');
-            if (heroSection.style.backgroundImage.includes('deforest.jpg')) {
-                heroSection.style.backgroundImage = "url('/img/forest.jpg')";
-            } else {
+
+            if (heroSection.style.backgroundImage === 'url("/img/forest.jpg")') {
                 heroSection.style.backgroundImage = "url('/img/deforest.jpg')";
+            } else {
+                heroSection.style.backgroundImage = "url('/img/forest.jpg')";
             }
         }
     </script>
